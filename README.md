@@ -1,27 +1,47 @@
-# NgrxEnlightment
+# Ngrx repository
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.11.
+Ce projet a pour objectif d'explorer la bibliothèque NgRx et l'ensemble de ses fonctionnalitées.
 
-## Development server
+Le projet a été découpé en plusieurs thématiques techniques.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-## Code scaffolding
+## Branche main/master
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Celle ci représente l'implémentation classique et minimale du projet, en utilisant un store, les actions, et effets.
 
-## Build
+## Branche feature/feature
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-## Running unit tests
+## Branche feature/component-store
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
+## Branche feature/entity
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Branche feature/business
 
-## Further help
+Cette branche contient cet ensemble de règles métiers imaginés afin de donner une réalité industielle au projet :
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+/**
+ * TICKET FEATURE 1
+ * 
+ * ETQ USER JE SOUHAITE QUE LA MODIFICATION DES TODO SOIENT PERSISTEES EN BDD
+ */
+
+/**
+ * TICKET DEMANDE D EVOLUTION 2
+ * 
+ * ETQ USER LA MODIFICATION N IMPLIQUE PLUS DE SAUVERGARDE EN BASE,
+ * MAIS ELLE SERA EFFECTUEE SEULEMENT APRES X SECONDES
+ */
+
+/**
+ * TICKET FEATURE 3
+ * 
+ * ETQ USER JE SOUHAITE POUVOIR SUPPRIMER UNE TODO (VIA UNE PROPOSITION QUE FAIT L INTERFACE)
+ */
+
+/**
+ * TICKET EVOLUTION 4
+ * 
+ * AMELIORATION DE L'IHM / UX (fonctionnement général / animation)
+ */

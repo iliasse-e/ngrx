@@ -3,12 +3,14 @@ import { provideRouter } from '@angular/router';
 
 import { routes } from './app.routes';
 import { provideStore } from '@ngrx/store';
-import { todoReducer } from './todo.store';
+import { retrieveTodos$, todoReducer } from './todo.store';
+import { provideEffects } from '@ngrx/effects';
 
 export const appConfig: ApplicationConfig = {
   providers: [
-    provideZoneChangeDetection({ eventCoalescing: true }), 
+    provideZoneChangeDetection({ eventCoalescing: true }),
     provideRouter(routes), provideStore(),
-    provideStore({todo: todoReducer})
-  ]
+    provideStore({ todo: todoReducer }),
+    provideEffects({ retrieveTodos$ })
+]
 };

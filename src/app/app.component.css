@@ -1,0 +1,24 @@
+.body {
+    display: flex;
+    justify-content: center;
+    margin: 20px auto;
+}
+
+.todo-card {
+    transition: ease-in;
+}
+
+ul {
+    border: solid 1px black;
+    border-radius: 5px;
+
+    li {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+.completed-description {
+    text-decoration: line-through;
+    transition: 200ms;
+}
