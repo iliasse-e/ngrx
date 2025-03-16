@@ -17,6 +17,8 @@ Celle ci représente l'implémentation classique et minimale du projet, en utili
 
 ## Branche feature/entity
 
+## Branche feature/test
+
 ## Branche feature/business
 
 Cette branche contient cet ensemble de règles métiers imaginés afin de donner une réalité industielle au projet :
