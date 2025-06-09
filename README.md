@@ -4,6 +4,14 @@ Ce projet a pour objectif d'explorer la bibliothèque NgRx et l'ensemble de ses 
 
 Le projet a été découpé en plusieurs thématiques techniques.
 
+- [Store](guide/store) - RxJS powered global state management for Angular apps, inspired by Redux.
+- [Effects](guide/effects) - Side effect model for @ngrx/store.
+- [Router Store](guide/router-store) - Bindings to connect the Angular Router to @ngrx/store.
+- [Entity](guide/entity) - Entity State adapter for managing record collections.
+- [Signals](guide/signals) - Reactive store and set of utilities for Angular Signals.
+- [ComponentStore](guide/component-store) - Standalone library for managing local/component state.
+- [Operators](guide/operators) - Shared RxJS operators for NgRx libraries.
+
 
 ## Branche main/master
 
