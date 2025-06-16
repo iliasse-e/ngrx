@@ -1,47 +1,14 @@
-# Ngrx repository
+# Description
 
-Ce projet a pour objectif d'explorer la bibliothèque NgRx et l'ensemble de ses fonctionnalitées.
+<figure>
+  <img src="/public/state-management-lifecycle.png" alt="NgRx State Management Lifecycle Diagram" width="100%" height="100%" />
+</figure>
 
-Le projet a été découpé en plusieurs thématiques techniques.
+## Key concepts
 
-
-## Branche main/master
-
-Celle ci représente l'implémentation classique et minimale du projet, en utilisant un store, les actions, et effets.
-
-## Branche feature/feature
-
-
-## Branche feature/component-store
-
-
-## Branche feature/entity
-
-## Branche feature/business
-
-Cette branche contient cet ensemble de règles métiers imaginés afin de donner une réalité industielle au projet :
-
-/**
- * TICKET FEATURE 1
- * 
- * ETQ USER JE SOUHAITE QUE LA MODIFICATION DES TODO SOIENT PERSISTEES EN BDD
- */
-
-/**
- * TICKET DEMANDE D EVOLUTION 2
- * 
- * ETQ USER LA MODIFICATION N IMPLIQUE PLUS DE SAUVERGARDE EN BASE,
- * MAIS ELLE SERA EFFECTUEE SEULEMENT APRES X SECONDES
- */
-
-/**
- * TICKET FEATURE 3
- * 
- * ETQ USER JE SOUHAITE POUVOIR SUPPRIMER UNE TODO (VIA UNE PROPOSITION QUE FAIT L INTERFACE)
- */
-
-/**
- * TICKET EVOLUTION 4
- * 
- * AMELIORATION DE L'IHM / UX (fonctionnement général / animation)
- */
+- [Actions](/actions) describe unique events that are dispatched from components and services.
+- State changes are handled by pure functions called [reducers](/reducers) that take the current state and the latest action to compute a new state.
+- [Reducers](/reducers) in NgRx are responsible for handling transitions from one state to the next state in your application. Reducer functions handle these transitions by determining which actions to handle based on the action's type.
+- [Selectors](/selectors) are pure functions used to select, derive and compose pieces of state.
+- State is accessed with the `Store`, an observable of state and an observer of actions.
+- [Effects](/effects) are an RxJS powered side effect model for Store. Effects use streams to provide new sources of actions to reduce state based on external interactions such as network requests, web socket messages and time-based events.

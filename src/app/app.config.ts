@@ -9,7 +9,7 @@ import { provideEffects } from '@ngrx/effects';
 export const appConfig: ApplicationConfig = {
   providers: [
     provideZoneChangeDetection({ eventCoalescing: true }),
-    provideRouter(routes), provideStore(),
+    provideRouter(routes),
     provideStore({ todo: todoReducer }),
     provideEffects({ retrieveTodos$ })
 ]
