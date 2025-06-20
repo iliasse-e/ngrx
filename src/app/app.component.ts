@@ -1,15 +1,16 @@
 import { Component, inject, OnInit } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
 import { Store } from '@ngrx/store';
-import { addTodo, deleteTodo, modifyTodo, resetTodos, retrieveTodos, Todo, TodoState } from './todo.store';
+import { addTodo, deleteTodo, modifyTodo, resetTodos, retrieveTodos } from './store/todo.action';
 import { toSignal } from '@angular/core/rxjs-interop';
-import { map } from 'rxjs';
 import { ErrorComponent } from './error/error.component';
+import { TodoState } from './store/todo.reducer';
+import { Todo } from './todo.type';
+import { selectTodoError, selectTodoList, selectTodoLoading } from './store/todo.selector';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, ErrorComponent],
+  imports: [ErrorComponent],
   template: `
   <div class="body">
     <section>
@@ -33,14 +34,14 @@ import { ErrorComponent } from './error/error.component';
       <input #description id="new-todo" type="text"/>
       <button (click)="newTodo(description.value)">New todo</button>
   
-      @if (todos().length) {
+      @if (todos()?.length) {
         <button (click)="reset()">Erase all</button>
       }
 
     </section>
 
-    @if (error().length) {
-      <error [message]="error()" />
+    @if (error()?.length) {
+      <error [message]="error() || 'Generic error message'" />
     }
   </div>
 
@@ -52,15 +53,15 @@ import { ErrorComponent } from './error/error.component';
 })
 export class AppComponent implements OnInit {
 
-  readonly #store = inject(Store<TodoState>);  
+  readonly #store = inject(Store<TodoState>);
 
   // DEPORT IN SELECTOR
 
-  todos = toSignal(this.#store.select('todo').pipe(map(appState => appState?.todos)));
+  todos = toSignal(this.#store.select(selectTodoList));
 
-  error = toSignal(this.#store.select('todo').pipe(map(appState => appState?.error)));
+  loading = toSignal(this.#store.select(selectTodoLoading));
 
-  loading = toSignal(this.#store.select('todo').pipe(map(appState => appState?.loading)))
+  error = toSignal(this.#store.select(selectTodoError));
 
   ngOnInit(): void {
     this.loadTodos();
@@ -84,7 +85,7 @@ export class AppComponent implements OnInit {
   }
 
   loadTodos(): void {
-    this.#store.dispatch(retrieveTodos())
+    this.#store.dispatch(retrieveTodos());
   }
 
   reset(): void {

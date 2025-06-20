@@ -1,6 +1,6 @@
 import { delay, Observable, of } from "rxjs";
-import { Todo } from "./todo.store";
 import { Injectable } from "@angular/core";
+import { Todo } from "./todo.type";
 
 @Injectable({providedIn: "root"})
 export class TodoService {
