@@ -93,18 +93,18 @@ Les effets fonctionnels en NGRX permettent de gérer les opérations asynchrones
 
     points à retenir
 
--    Les effets gèrent les opérations asynchrones et les effets secondaires.
+    - Les effets gèrent les opérations asynchrones et les effets secondaires.
     Utilisez createEffect avec des fonctions pour créer des effets pures et injecter les dépendances.
--    Écoutez les actions pertinentes et émettez de nouvelles actions en fonction des résultats des opérations asynchrones.
--    Les effets doivent être ajoutés à la configuration du module NGRX.
+    - Écoutez les actions pertinentes et émettez de nouvelles actions en fonction des résultats des opérations asynchrones.
+    - Les effets doivent être ajoutés à la configuration du module NGRX.
 </div>
 
 <div class="alert is-important">
 
     Bonnes pratiques
 
--    Gardez les effets simples et focus sur une seule responsabilité.
--    Gérer les erreurs de manière proactive avec des actions de type échec.
--    Utilisez des noms d'actions et d'effets descriptifs pour clarifier leur rôle.
--    Centralisez la logique d'effets dans des fichiers séparés pour une meilleure organisation.
+    - Gardez les effets simples et focus sur une seule responsabilité.
+    - Gérer les erreurs de manière proactive avec des actions de type échec.
+    - Utilisez des noms d'actions et d'effets descriptifs pour clarifier leur rôle.
+    - Centralisez la logique d'effets dans des fichiers séparés pour une meilleure organisation.
 </div>
